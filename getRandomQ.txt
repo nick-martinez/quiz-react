@@ -1,0 +1,15 @@
+  getQuestion() {
+    for (var i = 0; i < 5; i++) {
+      var randomVal = Math.floor(Math.random() * this.state.questions.length);
+
+      this.setState((prevState) => {
+        return {
+          questionsOut: prevState.questionsOut.concat(this.state.questions[randomVal]),
+        };
+      });
+
+      this.state.questions.splice(randomVal, 1)
+    }
+
+    console.log("here");
+  }
